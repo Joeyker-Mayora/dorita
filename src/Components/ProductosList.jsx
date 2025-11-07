@@ -10,14 +10,14 @@ import {
 
 const ProductosList = ({ productos }) => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 p-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
       {productos.map((producto) => (
         <div
           key={producto.id}
-          className="group relative bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300"
+          className="group relative bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300"
         >
           {/* Imagen del producto */}
-          <div className="relative w-full h-[480px] overflow-hidden">
+          <div className="relative w-full h-[400px] sm:h-[320px] md:h-[350px] lg:h-[350px] overflow-hidden">
             <img
               src={producto.imagen}
               alt={producto.nombre}
@@ -25,7 +25,7 @@ const ProductosList = ({ productos }) => {
             />
 
             {/* Botones superiores (favorito y ver) */}
-            <div className="absolute top-4 right-4 flex flex-col gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <div className="absolute top-3 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
               <button className="bg-white/90 p-2 rounded-full shadow-md hover:bg-white hover:scale-105 transition-transform">
                 <FaHeart className="text-gray-600 hover:text-red-500" />
               </button>
@@ -37,22 +37,22 @@ const ProductosList = ({ productos }) => {
               </Link>
             </div>
 
-            {/* Etiqueta de promoción o novedad */}
+            {/* Etiqueta de destacado */}
             {producto.destacado && (
-              <span className="absolute top-4 left-4 bg-black/80 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">
+              <span className="absolute top-3 left-3 bg-black/80 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">
                 Nuevo
               </span>
             )}
 
             {/* Botón inferior (añadir al carrito) */}
-            <button className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-neutral-500 text-white px-6 py-2 rounded-full flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-500 hover:bg-gray-900">
+            <button className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-neutral-500 text-white px-4 py-1.5 rounded-full flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-500 hover:bg-gray-900 text-sm">
               <FaShoppingCart /> ver
             </button>
           </div>
 
           {/* Detalles del producto */}
-          <div className="p-5 text-center">
-            <h2 className="text-lg font-semibold text-gray-800 mb-1">
+          <div className="p-4 text-center">
+            <h2 className="text-md font-semibold text-gray-800 mb-1 truncate">
               {producto.nombre}
             </h2>
 
@@ -67,8 +67,8 @@ const ProductosList = ({ productos }) => {
               )}
             </div>
 
-            <p className="text-gray-500 mb-1">${producto.precio.toFixed(2)}</p>
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-500 mb-1 text-sm">${producto.precio.toFixed(2)}</p>
+            <p className="text-gray-400 text-xs truncate">
               Tallas: {producto.tallas.join(", ")}
             </p>
           </div>

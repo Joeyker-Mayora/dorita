@@ -8,7 +8,7 @@ const categoriasPrincipales = [
   { id: "todas", nombre: "Todas", color: "gray", subcategorias: [] },
   { id: "damas", nombre: "Damas", subcategorias: ["Panties", "Brasier", "Pantalones", "Tops"], color: "pink" },
   { id: "accesorios", nombre: "Accesorios", subcategorias: ["Pulseras", "Bolsos", "Sombreros"], color: "purple" },
-  { id: "hombres", nombre: "Hombres", subcategorias: ["Camisetas", "Boxers", "Medias"], color: "blue" },
+  { id: "Caballeros y Niños", nombre: "Caballeros y Niños", subcategorias: ["Camisetas", "Boxers", "Medias"], color: "blue" },
 ];
 
 const colorClasses = {
