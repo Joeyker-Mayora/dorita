@@ -1,4 +1,4 @@
-import BoxerRojo from "../Img/BoxerRojo.png";
+import BoxerRojo from "../Img/boxerRojo.png";
 import { nanoid } from "nanoid";
 
 export const productosRopa = [
